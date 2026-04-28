@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multi_favour_example_app/core/helpers/flavour.dart';
+import 'package:multi_favour_example_app/core/theme/app_colors.dart';
 
 void mainApp() {
   return runApp(MaterialApp(home: MainApp()));
@@ -14,6 +14,8 @@ class MainApp extends StatefulWidget {
 class _MainApp extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
+    final  kmedia = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -26,7 +28,23 @@ class _MainApp extends State<MainApp> {
           child: Column(
             crossAxisAlignment: .center,
             mainAxisAlignment: .center,
-            children: [Text(Flavour.getEnvironmentName())],
+            children: [
+              Spacer(),
+              Container(
+                  width: kmedia.width -32,
+                  height: 120,
+                  color:AppColor.green.shade50
+              ),
+              Spacer() ,
+              OutlinedButton(
+                  onPressed: () {},
+                  child: Icon(Icons.eighteen_mp) ,
+
+              ),
+              const SizedBox(
+                height:8,
+              )
+            ],
           ),
         ),
       ),
